@@ -49,7 +49,7 @@ async def give_filter(client, message):
                 print(e)
             
         manual = await manual_filters(client, message)
-        if manual == False:
+        if manual == True:
             settings = await get_settings(message.chat.id)
             try:
                 if settings['auto_ffilter']:
