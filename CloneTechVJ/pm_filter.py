@@ -1055,4 +1055,14 @@ async def advantage_spell_chok(client, name, msg, reply_msg, vj_search):
             reply_markup=InlineKeyboardMarkup(btn)
         )
         await asyncio.sleep(600)
-        await spell_check_del.delete()
+        await spell_check_del.delete() 
+        ```
+if message.chat.id != SUPPORT_CHAT_ID:
+    if message.chat.type == "group":
+        group_search = True
+        group_search_query = message.text
+        group_search_results = []
+        group_search_function(group_search_query, group_search_results)
+        for result in group_search_results:
+            await message.reply(result)
+```
